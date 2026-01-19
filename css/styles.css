@@ -1,4 +1,36 @@
 h1{
-
+    font-size: 50px;
     background-color: brown;
+    border: 1px solid rgba(42, 67, 181, 0.501);
+}
+
+#contenedor {
+    border: 1px solid black;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Botón */
+#iniciar{
+  background-color: brown;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.2s ease;
+  margin-left:25%;
+}
+
+/* Hover (cuando pasás el mouse) */
+#iniciar:hover{
+  background-color: #6b1b1b; /* marrón más oscuro */
+  transform: translateY(-2px);
+}
+
+/* Click (cuando apretás) */
+#iniciar:active{
+  transform: translateY(0px);
 }
