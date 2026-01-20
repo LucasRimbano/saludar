@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("iniciar").addEventListener("click", iniciarCalculadora);
+  document.getElementById("modo-oscuro").addEventListener("click", activarModoOscuro);
+  document.getElementById("Mostrar-nombre").addEventListener("click", mostrartitulo);
 });
 
 function iniciarCalculadora() {
@@ -144,3 +146,29 @@ switch (operacion) {
  operacion = parseInt(prompt("Ingresa el número de la operación que deseas ver:\n1. Suma\n2. Resta\n3. Multiplicación\n4. División\n5. Promedio\n6. cambiar numeros \n7. Salir"),10);
 }
 }
+
+
+
+function activarModoOscuro() {
+  document.body.classList.toggle("modo-oscuro");
+}
+
+function actualizarTextoBoton() {
+  const boton = document.getElementById("modo-oscuro");
+  if (document.body.classList.contains("modo-oscuro")) {
+    boton.textContent = "Modo Oscuro";
+  } else {
+    boton.textContent = "Modo claro";
+  } 
+}
+  actualizarTextoBoton();
+
+
+function mostrartitulo() {
+  document.getElementById("titulo").textContent = "Bienvenido a la calculadora loca";
+
+  const btn = document.getElementById("titulo");
+  btn.classList.add("mover");
+  setTimeout(() => btn.classList.remove("mover"), 700);
+}
+

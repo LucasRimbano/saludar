@@ -7,7 +7,7 @@ h1{
 #contenedor {
     border: 1px solid black;
     padding: 20px;
-    margin-top: 20px;
+    margin-top: 100px;
 }
 
 /* Botón */
@@ -33,4 +33,62 @@ h1{
 /* Click (cuando apretás) */
 #iniciar:active{
   transform: translateY(0px);
+}
+
+body.modo-oscuro{
+  background: #111;
+  color: #fff;
+}
+#contenedor-modo-oscuro{
+  margin-top: 20px;
+  text-align: center;
+}
+#modo-oscuro{
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+#modo-oscuro:hover{
+  background-color: #222;
+  transform: translateY(-2px);
+}
+#top-bar{
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 9999;
+}
+
+/* Botón del top bar */
+#Mostrar-nombre{
+  padding: 10px 14px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  background: #222;
+  color: #fff;
+
+  /* animación */
+  transition: transform 0.6s ease;
+}
+
+#titulo{
+  display: inline-block;
+  padding: 8px 12px;
+  background: rgba(0,0,0,0.15);
+  border-radius: 10px;
+  transition: transform 0.6s ease;
+  font-weight: 700;
+}
+
+/* cuando se activa */
+#titulo.mover{
+  transform: translateX(250px); /* movelo bastante */
 }
