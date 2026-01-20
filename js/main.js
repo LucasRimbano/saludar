@@ -5,11 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function iniciarCalculadora() {
-alert("Bienvenido a la página de saludo y suma!");
+alert("Bienvenido a la calculadora♥!");
 
 
-const nombre1 = "Lucas";
-Imprimir("nombre", nombre1);
+const nombre1 = prompt("Ingrese su nombre")
+Imprimir("mensaje", "Su nombre es: " + nombre1);
 
 function Imprimir(tipo, dato) {
   if (tipo === "nombre") {
