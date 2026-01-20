@@ -7,8 +7,7 @@ alert("Bienvenido a la página de saludo y suma!");
 
 
 const nombre1 = "Lucas";
-const nombre2 = "María";
-const nombre3 = "Pedro";
+Imprimir("nombre", nombre1);
 
 function Imprimir(tipo, dato) {
   if (tipo === "nombre") {
@@ -65,17 +64,6 @@ let [numero1, numero2] = ingresodatos();
 
 let resultadoSuma = sumar(numero1, numero2);
 
-for (let i = 1; i <= 3; i++) {
-    if (i === 1) {
-        Imprimir("nombre", nombre1);
-    } else if (i === 2) {
-        Imprimir("nombre", nombre2);
-    } else if (i === 3) {
-        Imprimir("nombre", nombre3);
-    }   
-}
-
-
 
 
 
@@ -111,9 +99,17 @@ function Promedio(a,b) {
 let resultadoPromedio = Promedio(numero1, numero2);
 
 
-const operacion = parseInt(prompt("Ingresa el número de la operación que deseas ver:\n1. Suma\n2. Resta\n3. Multiplicación\n4. División\n5. Promedio"),10);
+
+let operacion = parseInt(prompt("Ingresa el número de la operación que deseas ver:\n1. Suma\n2. Resta\n3. Multiplicación\n4. División\n5. Promedio\n6. cambiar numeros \n7. Salir"),10);
 
 
+while (operacion !== 7) {
+
+  let resultadoSuma = numero1 + numero2;
+  let resultadoResta = numero1 - numero2;
+  let resultadoMultiplicacion = numero1 * numero2;
+  let resultadoDivision = (numero2 === 0) ? "Error: división por 0" : (numero1 / numero2);
+  let resultadoPromedio = (numero1 + numero2) / 2;
 switch (operacion) {
 
     case 1 :
@@ -126,18 +122,25 @@ switch (operacion) {
         break;
     case 3 :
         Imprimir("resultado", resultadoMultiplicacion);
-        break;
+        break; 
     case 4 :
         Imprimir("resultado", resultadoDivision);
         break;
     case 5:
         Imprimir("resultado", resultadoPromedio);
         break;
+    case 6:
+       [numero1, numero2] = ingresodatos();
+       alert("Números actualizados.");
+       break;
+    case 7:
+        alert("Gracias por usar la calculadora. ¡Hasta luego!");
+        return;
+
     default:
         alert("Operación no válida, ingrese un numero del 1 al 5 solamente");
 
 }
-
+ operacion = parseInt(prompt("Ingresa el número de la operación que deseas ver:\n1. Suma\n2. Resta\n3. Multiplicación\n4. División\n5. Promedio\n6. cambiar numeros \n7. Salir"),10);
 }
-
-
+}
