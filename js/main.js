@@ -2,7 +2,34 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("iniciar").addEventListener("click", iniciarCalculadora);
   document.getElementById("modo-oscuro").addEventListener("click", activarModoOscuro);
   document.getElementById("Mostrar-nombre").addEventListener("click", mostrartitulo);
+ 
 });
+
+
+function activarModoOscuro() {
+  document.body.classList.toggle("modo-oscuro");
+}
+
+function actualizarTextoBoton() {
+  const boton = document.getElementById("modo-oscuro");
+  if (document.body.classList.contains("modo-oscuro")) {
+    boton.textContent = "Modo Oscuro";
+  } else {
+    boton.textContent = "Modo claro";
+  } 
+}
+  actualizarTextoBoton();
+
+
+function mostrartitulo() {
+  document.getElementById("titulo").textContent = "Bienvenido a la calculadora loca";
+
+  const btn = document.getElementById("titulo");
+  btn.classList.add("mover");
+  setTimeout(() => btn.classList.remove("mover"), 700);
+}
+
+
 
 function iniciarCalculadora() {
 alert("Bienvenido a la calculadora♥!");
@@ -10,19 +37,6 @@ alert("Bienvenido a la calculadora♥!");
 
 const nombre1 = prompt("Ingrese su nombre")
 Imprimir("mensaje", "Su nombre es: " + nombre1);
-
-function Imprimir(tipo, dato) {
-  if (tipo === "nombre") {
-    console.log("Hola " + dato + "!");
-    alert("Hola " + dato + "!");
-  } else if (tipo === "resultado") {
-    console.log("El resultado es: " + dato);
-    alert("El resultado es: " + dato);
-  } else {
-    console.log(dato);
-    alert(dato);
-  }
-}
 
 
 
@@ -145,30 +159,22 @@ switch (operacion) {
 }
  operacion = parseInt(prompt("Ingresa el número de la operación que deseas ver:\n1. Suma\n2. Resta\n3. Multiplicación\n4. División\n5. Promedio\n6. cambiar numeros \n7. Salir"),10);
 }
-}
 
-
-
-function activarModoOscuro() {
-  document.body.classList.toggle("modo-oscuro");
-}
-
-function actualizarTextoBoton() {
-  const boton = document.getElementById("modo-oscuro");
-  if (document.body.classList.contains("modo-oscuro")) {
-    boton.textContent = "Modo Oscuro";
+function Imprimir(tipo, dato) {
+  if (tipo === "nombre") {
+    console.log("Hola " + dato + "!");
+    alert("Hola " + dato + "!");
+  } else if (tipo === "resultado") {
+    console.log("El resultado es: " + dato);
+    alert("El resultado es: " + dato);
   } else {
-    boton.textContent = "Modo claro";
-  } 
+    console.log(dato);
+    alert(dato);
+  }
 }
-  actualizarTextoBoton();
 
 
-function mostrartitulo() {
-  document.getElementById("titulo").textContent = "Bienvenido a la calculadora loca";
 
-  const btn = document.getElementById("titulo");
-  btn.classList.add("mover");
-  setTimeout(() => btn.classList.remove("mover"), 700);
 }
+
 
